@@ -1,0 +1,367 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: #111;
+    color: white;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.03);
+    backdrop-filter: blur(1px);
+}
+
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 12px;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: black;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 650px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.25),
+        rgba(0, 0, 0, 0.7)
+    );
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2;
+    max-width: 950px;
+    padding: 20px;
+}
+
+.small-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 13vw, 11rem);
+    line-height: 0.85;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+    text-shadow: 0 5px 30px rgba(0, 0, 0, 0.7);
+}
+
+.hero-text {
+    max-width: 650px;
+    margin: 0 auto 35px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    line-height: 1.6;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 14px 30px;
+    color: black;
+    background: white;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 30px;
+    transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+    transform: translateY(-4px);
+    background: #eaeaea;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.about {
+    min-height: 100vh;
+    background: #f4f4f4;
+    color: black;
+    padding: 120px 7%;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 90px;
+    align-items: center;
+}
+
+.about-left {
+    max-width: 700px;
+}
+
+.section-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: black;
+    margin-bottom: 30px;
+}
+
+.about h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 9vw, 9rem);
+    line-height: 0.82;
+    letter-spacing: 2px;
+    margin-bottom: 45px;
+}
+
+.about h2 span {
+    color: #191818;
+}
+
+.about-intro {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 2vw, 1.8rem);
+    line-height: 1.4;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.about-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #191818;
+    max-width: 650px;
+    margin-bottom: 18px;
+}
+
+.about-bottom {
+    display: flex;
+    gap: 55px;
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 1px solid #333;
+}
+
+.about-bottom div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.about-bottom span {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+
+.about-bottom p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #777;
+}
+
+.about-right {
+    position: relative;
+    max-width: 520px;
+    justify-self: end;
+}
+
+.about-right img {
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(15%);
+    transition: transform 0.5s ease;
+}
+
+.about-right:hover img {
+    transform: scale(1.02);
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.8)
+    );
+}
+
+.dreams {
+    min-height: 100vh;
+    padding: 130px 6%;
+    background: #f4f4f4;
+    color: #111;
+    text-align: center;
+}
+
+.dreams .section-label {
+    color: #555;
+}
+
+
+.dreams > h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    letter-spacing: 3px;
+    margin-bottom: 60px;
+}
+
+.dream-container {
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+}
+
+.dream-card {
+    width: 33.33%;
+    background: white;
+    text-align: left;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+    transition: 0.35s ease;
+}
+
+.dream-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+}
+
+.dream-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    transition: 0.4s ease;
+}
+
+
+.dream-card:hover img {
+    transform: scale(1.04);
+}
+
+
+.dream-info {
+    padding: 25px 25px 30px;
+}
+
+
+.dream-info h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+
+.dream-info p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+footer {
+    padding: 70px 20px;
+    text-align: center;
+    background: #111;
+    color: white;
+}
+
+footer h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #bbb;
+    margin-bottom: 25px;
+}
+
+footer span {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: #777;
+}
+
