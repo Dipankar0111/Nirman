@@ -80,6 +80,16 @@ body {
     z-index: 0;
 }
 
+.hero-video-drive {
+    top: 50%;
+    left: 50%;
+    width: max(100vw, 177.78vh);
+    height: max(56.25vw, 100vh);
+    transform: translate(-50%, -50%);
+    border: 0;
+    pointer-events: none;
+}
+
 .hero-overlay {
     position: absolute;
     width: 100%;
